@@ -1,4 +1,4 @@
-package com.company;
+package recognizition;
 
 import java.util.HashMap;
 

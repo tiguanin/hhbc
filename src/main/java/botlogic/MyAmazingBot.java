@@ -1,4 +1,4 @@
-package com.company;
+package botlogic;
 
 import org.telegram.telegrambots.api.methods.GetFile;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
@@ -9,6 +9,7 @@ import org.telegram.telegrambots.api.objects.PhotoSize;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
+import recognizition.Recognition;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -16,9 +17,6 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
-import static com.company.Common.downloadRequest;
-import static com.company.Recognition.recognizeEmotions;
 
 
 public class MyAmazingBot extends TelegramLongPollingBot {
@@ -65,7 +63,7 @@ public class MyAmazingBot extends TelegramLongPollingBot {
 
                 System.out.println("* Uploading file to Telegram server. URL: " + downloadUrl);
                 downloadFile(filePath);
-                downloadRequest(downloadUrl, mimeType);
+                Common.downloadRequest(downloadUrl, mimeType);
                 System.out.println("Загрузил файл с filePath: " + filePath);
             } catch (TelegramApiException e) {
                 e.printStackTrace();
@@ -97,7 +95,7 @@ public class MyAmazingBot extends TelegramLongPollingBot {
                 // распознавание эмоций на фото
                 try {
                     System.out.println("* Trying recognize photo...");
-                    resultParams = recognizeEmotions(downloadUrl);
+                    resultParams = Recognition.recognizeEmotions(downloadUrl);
                     System.out.println("\n* Emotions on photo: ");
                     System.out.println(resultParams.get("scores"));
 

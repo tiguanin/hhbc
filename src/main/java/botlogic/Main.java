@@ -1,4 +1,4 @@
-package com.company;
+package botlogic;
 
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;

@@ -1,6 +1,7 @@
-package com.company;
+package recognizition;
 
 
+import botlogic.Common;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpEntity;
@@ -20,7 +21,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 
-import static com.company.Common.drawRectangle;
+import static botlogic.Common.drawRectangle;
 
 
 public class Recognition {

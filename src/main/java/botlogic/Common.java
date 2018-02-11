@@ -1,6 +1,7 @@
-package com.company;
+package botlogic;
 
 import org.apache.commons.lang.RandomStringUtils;
+import recognizition.FaceRectangle;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -16,6 +17,7 @@ import java.util.HashMap;
 
 public class Common {
 
+    // TODO: убрать. Непонятно зачем эта конструкция
     public static void downloadRequest(String urlStr, String mimeType) {
         try {
             System.out.println("* Trying to create file at directory and record all content here...");
