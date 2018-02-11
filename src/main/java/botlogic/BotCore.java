@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class MyAmazingBot extends TelegramLongPollingBot {
+public class BotCore extends TelegramLongPollingBot {
 
 
     public void onUpdateReceived(Update update) {
