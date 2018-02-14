@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
 
-
     <repositories>
         <repository>
             <id>jitpack.io</id>
@@ -17,93 +16,104 @@
         </repository>
     </repositories>
 
-<dependencies>
+    <dependencies>
 
-    <!-- telegrambot lib -->
-    <dependency>
-        <groupId>org.telegram</groupId>
-        <artifactId>telegrambots</artifactId>
-        <version>3.5</version>
-    </dependency>
+        <!-- telegrambot lib -->
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots</artifactId>
+            <version>3.5</version>
+        </dependency>
 
-    <!-- OCR (text recognition from input image) -->
-    <dependency>
-        <groupId>com.asprise.ocr</groupId>
-        <artifactId>java-ocr-api</artifactId>
-        <version>[15,)</version>
-    </dependency>
+        <!-- OCR (text recognition from input image) -->
+        <dependency>
+            <groupId>com.asprise.ocr</groupId>
+            <artifactId>java-ocr-api</artifactId>
+            <version>[15,)</version>
+        </dependency>
 
-    <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
-    <dependency>
-        <groupId>commons-lang</groupId>
-        <artifactId>commons-lang</artifactId>
-        <version>2.6</version>
-    </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
 
-    <dependency>
-        <groupId>com.googlecode.json-simple</groupId>
-        <artifactId>json-simple</artifactId>
-        <version>1.1</version>
-    </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1</version>
+        </dependency>
 
-    <dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.4.4</version>
-    </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.4.4</version>
+        </dependency>
 
-    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-    <dependency>
-        <groupId>com.google.code.gson</groupId>
-        <artifactId>gson</artifactId>
-        <version>2.8.2</version>
-    </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
+        </dependency>
 
-    <dependency>
-        <groupId>org.piccolo2d</groupId>
-        <artifactId>piccolo2d-core</artifactId>
-        <version>3.0</version>
-    </dependency>
-
-
-    <dependency>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.1</version>
-    </dependency>
+        <dependency>
+            <groupId>org.piccolo2d</groupId>
+            <artifactId>piccolo2d-core</artifactId>
+            <version>3.0</version>
+        </dependency>
 
 
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.6.1</version>
+        </dependency>
 
 
-</dependencies>
+    </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
-            </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<source>1.8</source>-->
+                    <!--<target>1.8</target>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<version>3.6.1</version>-->
+                <!--<configuration>-->
+                    <!--<fork>true</fork>-->
+                    <!--<executable>${JAVA_HOME}/bin/javac</executable>-->
+                    <!--<encoding>UTF-8</encoding>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <fork>true</fork>
-                    <executable>${JAVA_HOME}/bin/javac</executable>
-                    <encoding>UTF-8</encoding>
+                    <source>${source.level}</source>
+                    <target>${target.level}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
             </plugin>
 
 
         </plugins>
     </build>
-
-
 
 
     <pluginRepositories>
@@ -115,11 +125,6 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-
-
-
-
-
 
 
 </project>
