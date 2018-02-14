@@ -98,6 +98,16 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <executable>${JAVA_HOME}/bin/javac</executable>
+                    <compilerVersion>1.8</compilerVersion>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
