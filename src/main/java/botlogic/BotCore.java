@@ -20,6 +20,7 @@ import java.util.List;
 
 
 public class BotCore extends TelegramLongPollingBot {
+    public static final String botName = "";
 
 
     public void onUpdateReceived(Update update) {
@@ -130,7 +131,7 @@ public class BotCore extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "540440766:AAFT0rjxt8gJ2p9RZ9wxpP5W-R_elK0gyUE";
+        return Constants.BOT_TOKEN;
     }
 
 
