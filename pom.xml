@@ -16,8 +16,11 @@
         </repository>
     </repositories>
 
-    <dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
+    <dependencies>
         <!-- telegrambot lib -->
         <dependency>
             <groupId>org.telegram</groupId>
@@ -70,8 +73,6 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.6.1</version>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -98,8 +99,6 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-
-
         </plugins>
     </build>
 
