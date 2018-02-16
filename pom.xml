@@ -94,6 +94,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <release>8</release>
                     <fork>true</fork>
                     <executable>${JAVA_HOME}/bin/javac</executable>
                     <encoding>UTF-8</encoding>
