@@ -75,7 +75,7 @@
         </dependency>
 
         <dependency>
-            <groupId>groupId</groupId>
+            <groupId>lutals</groupId>
             <artifactId>speechkit_interaction</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
