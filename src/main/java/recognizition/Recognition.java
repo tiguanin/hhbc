@@ -40,7 +40,7 @@ public class Recognition {
 
             HttpPost request = new HttpPost(uri);
             request.setHeader("Content-Type", "application/json");
-            request.setHeader("Ocp-Apim-Subscription-Key", "dfa4cf9b01a545bdaa97ffadf7041511");
+            request.setHeader("Ocp-Apim-Subscription-Key", "06194a1efa7447879ea8ae420e0c7e43");
 
             StringEntity reqEntity = new StringEntity("{ \"url\": \"" + imageUrl + "\" }");
             request.setEntity(reqEntity);
@@ -52,19 +52,23 @@ public class Recognition {
                 resultAsJson = EntityUtils.toString(entity);
                 EntityUtils.consume(entity);
                 JSONParser parser = new JSONParser();
+
+                System.out.println(resultAsJson);
+
                 JSONArray array = (JSONArray) parser.parse(resultAsJson);
                 JSONObject mainJsonObj = (JSONObject) array.get(0);
                 JSONObject jsonScores;
                 JSONObject jsonRectangle;
 
-                // JSON объект со скорингом
+                // маппинг JSON-объекта со скорингом
                 jsonScores = (JSONObject) mainJsonObj.get("scores");
                 HashMap<String, Object> scoresParams = new ObjectMapper().readValue(jsonScores.toJSONString(), HashMap.class);
 
-                // JSON объект с параметрами области лица
+                // маппинг JSON-объекта с координатами лица
                 jsonRectangle = (JSONObject) mainJsonObj.get("faceRectangle");
                 HashMap<String, Object> rectangleParams = new ObjectMapper().readValue(jsonRectangle.toJSONString(), HashMap.class);
 
+                // формирование результирующей мапы с готовыми для вывода данными
                 FaceRectangle rectangle = new FaceRectangle(rectangleParams, imageUrl);
                 resultParams.put("path", drawRectangle(rectangle));
                 resultParams.put("scores", Common.parseMapToString(scoresParams));

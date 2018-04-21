@@ -1,5 +1,6 @@
 package botlogic;
 
+import constants.Constants;
 import org.telegram.telegrambots.api.methods.GetFile;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.methods.send.SendPhoto;
@@ -63,6 +64,7 @@ public class BotCore extends TelegramLongPollingBot {
                 String downloadUrl = file.getFileUrl(this.getBotToken(), filePath);
 
                 System.out.println("* Uploading file to Telegram server. URL: " + downloadUrl);
+                // загрузка файла на сервер Телеграма
                 downloadFile(filePath);
                 Common.downloadRequest(downloadUrl, mimeType);
                 System.out.println("Загрузил файл с filePath: " + filePath);

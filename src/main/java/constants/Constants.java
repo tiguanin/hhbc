@@ -1,4 +1,4 @@
-package botlogic;
+package constants;
 
 public class Constants {
 

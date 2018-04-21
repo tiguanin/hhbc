@@ -1,5 +1,6 @@
 package botlogic;
 
+import constants.Constants;
 import org.apache.commons.lang.RandomStringUtils;
 import recognizition.FaceRectangle;
 

@@ -2,12 +2,15 @@ package recognizition;
 
 import java.util.HashMap;
 
+/**
+ * Координаты распознанного лица.
+ */
 public class FaceRectangle {
     private int height;
     private int left;
     private int top;
     private int width;
-    private String imageUrl;
+    private String imageUrl; // здесь это лишнее
 
     public FaceRectangle(int height, int left, int top, int width, String imageUrl) {
         this.top = top;
